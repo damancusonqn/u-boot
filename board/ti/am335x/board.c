@@ -261,6 +261,11 @@ static int probe_cape_eeprom(struct am335x_cape_eeprom_id *cape_header)
 		model=M_BBG1;
 	}
 
+	//DM:
+	if (board_is_pb()) {
+		name = "A335PBGL";
+	}
+
 	set_board_info_env(name);
 
 	i2c_set_bus_num(2);
